@@ -5,6 +5,8 @@
 1. [Cargo](#cargo)
 
 ## Cargo
+Cargo is a packaging tool used for Rust. It ensures repeatable builds.
+
 * `cargo new <pkg name> <mode>`
     * `<mode>` can be `--lib` or `--bin` (has `main()` entrypoint)
     * Creates `*.toml` manifest with metadata about package.
