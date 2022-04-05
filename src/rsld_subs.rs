@@ -35,7 +35,7 @@ pub mod rs_subs {
         //https://users.rust-lang.org/t/how-do-i-convert-vec-of-i32-to-string/18669/8
         let str_substr_indices: Vec<String> = substr_indices
             .into_iter() // convert to iterator
-            .map(|d| d.to_string())// apply from_digit to each digit converting digit to char representation
+            .map(|d| d.to_string())// apply to_string to each digit converting digit to string representation
             .collect();  // return to iterator
   
         // join the itr of strings by a space and return

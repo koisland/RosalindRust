@@ -12,8 +12,11 @@ use std::env;
 // mod rsld_hamm;
 // use crate::rsld_hamm::rs_hamm::hamm_dst;
 
-mod rsld_subs;
-use crate::rsld_subs::rs_subs::find_motif;
+// mod rsld_subs;
+// use crate::rsld_subs::rs_subs::find_motif;
+
+mod rsld_prot;
+use crate::rsld_prot::rs_prot::translate;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
@@ -23,8 +26,9 @@ fn main() {
     // let res = replace_u(rs_fname);
     // let res = rev_comp(rs_fname);
     // let res = hamm_dst(rs_fname);
-    let res = find_motif(rs_fname);
+    // let res = find_motif(rs_fname);
 
+    let res = translate(rs_fname);
     println!("{}", res);
 
 }
