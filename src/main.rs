@@ -1,22 +1,27 @@
 use std::env;
 
+mod lib;
+
 // mod rsld_dna;
-// use crate::rsld_dna::rsld_dna::cnt_nt;
+// use crate::rsld_dna::cnt_nt;
 
 // mod rsld_rna;
-// use crate::rsld_rna::rs_rna::replace_u;
+// use crate::rsld_rna::replace_u;
 
 // mod rsld_revc;
-// use crate::rsld_revc::rs_revc::rev_comp;
+// use crate::rsld_revc::rev_comp;
 
 // mod rsld_hamm;
-// use crate::rsld_hamm::rs_hamm::hamm_dst;
+// use crate::rsld_hamm::hamm_dst;
 
 // mod rsld_subs;
-// use crate::rsld_subs::rs_subs::find_motif;
+// use crate::rsld_subs::find_motif;
 
-mod rsld_prot;
-use crate::rsld_prot::rs_prot::translate;
+// mod rsld_prot;
+// use crate::rsld_prot::translate;
+
+mod rsld_gc;
+use crate::rsld_gc::gc_content;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
@@ -27,8 +32,9 @@ fn main() {
     // let res = rev_comp(rs_fname);
     // let res = hamm_dst(rs_fname);
     // let res = find_motif(rs_fname);
+    // let res = translate(rs_fname);
 
-    let res = translate(rs_fname);
-    println!("{}", res);
+    let res = gc_content(rs_fname);
+    println!("{}\n{}", res.id, res.gc_perc);
 
 }
