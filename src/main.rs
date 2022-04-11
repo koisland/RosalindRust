@@ -20,8 +20,11 @@ mod lib;
 // mod rsld_prot;
 // use crate::rsld_prot::translate;
 
-mod rsld_gc;
-use crate::rsld_gc::gc_content;
+// mod rsld_gc;
+// use crate::rsld_gc::gc_content;
+
+mod rsld_revp;
+use crate::rsld_revp::locate_rsites;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
@@ -33,8 +36,9 @@ fn main() {
     // let res = hamm_dst(rs_fname);
     // let res = find_motif(rs_fname);
     // let res = translate(rs_fname);
+    // let res = gc_content(rs_fname);
 
-    let res = gc_content(rs_fname);
-    println!("{}\n{}", res.id, res.gc_perc);
+    let res = locate_rsites(rs_fname);
+    println!("{:#?}", res);
 
 }
