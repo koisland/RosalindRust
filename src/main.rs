@@ -1,4 +1,5 @@
 use std::env;
+use itertools::Itertools;
 
 mod lib;
 
@@ -23,8 +24,19 @@ mod lib;
 // mod rsld_gc;
 // use crate::rsld_gc::gc_content;
 
-mod rsld_revp;
-use crate::rsld_revp::locate_rsites;
+// mod rsld_kmer_comp;
+// use crate::rsld_kmer_comp::kmer_comp;
+
+// mod rsld_enum;
+// use crate::rsld_enum::signed_perm;
+
+// // TODO:?
+// mod rsld_err_corr;
+// use crate::rsld_err_corr::error_correction;
+
+// TODO:?
+// mod rsld_revp;
+// use crate::rsld_revp::locate_rsites;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
@@ -37,8 +49,12 @@ fn main() {
     // let res = find_motif(rs_fname);
     // let res = translate(rs_fname);
     // let res = gc_content(rs_fname);
+    // let res = locate_rsites(rs_fname);
+    // let res = kmer_comp(rs_fname, 4).iter().join(" ");
+    // let res = signed_perm(&rs_fname[..]);
 
-    let res = locate_rsites(rs_fname);
-    println!("{:#?}", res);
-
+    // TODO
+    // let res = error_correction(&rs_fname[..]);
+    let res = "";
+    println!("{}\n", res);
 }

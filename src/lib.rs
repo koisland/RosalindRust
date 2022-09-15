@@ -1,6 +1,19 @@
 pub mod rs_utils {
     use std::{fs::File, collections::HashMap, io::{BufReader, BufRead}};
     use csv::Reader;
+    
+    pub fn rev_comp(seq: &str) -> String {
+        let rev_seq: String = seq
+            .replace("A", "t")
+            .replace("T", "a")
+            .replace("G", "c")
+            .replace("C", "g")
+            .to_uppercase()
+            .chars()
+            .rev()
+            .collect();
+        rev_seq
+    }
 
     pub fn rna_codons() -> HashMap<String, String> {
         let file = File::open("data/rna_tbl.csv")
@@ -19,7 +32,7 @@ pub mod rs_utils {
         return rna_tbl;
     }
 
-    pub fn unpack_fasta(fname: &String) -> HashMap<String, String> {
+    pub fn unpack_fasta(fname: &str) -> HashMap<String, String> {
         let seqs_file = File::open(&fname)
             .expect("Unable to read seqs file.");
         let seq_lines =  BufReader::new(seqs_file).lines();
@@ -33,7 +46,7 @@ pub mod rs_utils {
             let ln = ln.expect(&err_msg);
    
             // check if first char of line is >
-            if ln.chars().nth(0) == Some('>') {
+            if ln.chars().nth(0).unwrap() == '>' {
                 // get seq id and set as main seq
                 curr_seq_id = ln[1..].trim().to_string();
 

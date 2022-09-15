@@ -14,7 +14,7 @@ pub fn rev_comp(fname: &String) -> String {
         .rev()
         .collect();
 
-    println!("{}", rev_contents);
+    // println!("{}", rev_contents);
 
     return rev_contents;
 }
