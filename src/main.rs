@@ -30,6 +30,9 @@ mod lib;
 // mod rsld_enum;
 // use crate::rsld_enum::signed_perm;
 
+mod rsld_lexv;
+use crate::rsld_lexv::lex_order;
+
 // // TODO:?
 // mod rsld_err_corr;
 // use crate::rsld_err_corr::error_correction;
@@ -55,6 +58,6 @@ fn main() {
 
     // TODO
     // let res = error_correction(&rs_fname[..]);
-    let res = "";
+    let res = lex_order(rs_fname);
     println!("{}\n", res);
 }
