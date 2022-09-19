@@ -1,18 +1,7 @@
 use itertools::Itertools;
 use std::collections::HashMap;
-use crate::lib::rs_utils::{unpack_fasta, rev_comp};
+use crate::lib::rs_utils::{unpack_fasta, rev_comp, hamm_dst};
 
-
-fn hamm_dst(seq_1: &str, seq_2: &str) -> usize {
-    let mut h_dst: usize = 0;
-
-    for (char_1, char_2) in seq_1.chars().zip_eq(seq_2.chars()) {
-        if char_1 != char_2 {
-            h_dst += 1
-        }
-    }
-    h_dst
-}
 
 pub fn error_correction(fname: &str) -> String {
     let seqs = unpack_fasta(&fname);

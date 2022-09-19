@@ -1,6 +1,6 @@
 #[cfg(test)]
 mod tests {
-    use rosalind_rust::rs_utils::{unpack_fasta, rna_codons};
+    use rosalind_rust::rs_utils::{rna_codons, unpack_fasta};
 
     #[test]
     fn test_unpack() {
