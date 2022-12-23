@@ -39,6 +39,12 @@ mod lib;
 mod rsld_dst_mat;
 use crate::rsld_dst_mat::distance_matrix;
 
+mod rsld_pmch;
+use crate::rsld_pmch::pmch;
+
+mod rsld_inod;
+use crate::rsld_inod::inner_nodes;
+
 // // TODO:?
 // mod rsld_err_corr;
 // use crate::rsld_err_corr::error_correction;
@@ -62,12 +68,14 @@ fn main() {
     // let res = kmer_comp(rs_fname, 4).iter().join(" ");
     // let res = signed_perm(&rs_fname[..]);
     // let res = lex_order(rs_fname);
-    ////
     // let res = longest_subseq(rs_fname, true);
     // let desc_res = longest_subseq(rs_fname, false);
+    // let res = distance_matrix(rs_fname);
+    // let res = pmch(rs_fname);
 
     // TODO
     // let res = error_correction(&rs_fname[..]);
-    let res = distance_matrix(rs_fname);
-    println!("{}", res);
+
+    let res = inner_nodes(&rs_fname);
+    println!("{:?}", res);
 }
