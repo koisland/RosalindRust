@@ -17,7 +17,7 @@ pub fn inner_nodes(fname: &str) -> usize {
     //         println!("{starting_leaves} - {remainder}");
     //         inodes.push(starting_leaves);
     //         inodes.push(remainder);
-    //     }   
+    //     }
     // }
     // inodes.iter().sum()
 }

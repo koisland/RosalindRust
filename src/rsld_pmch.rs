@@ -5,10 +5,10 @@ fn factorial(n: usize) -> u128 {
     let mut prod: u128 = 1;
     for i in 0..n {
         let i = i as u128;
-        prod *= i+1
+        prod *= i + 1
     }
 
-    return prod
+    return prod;
 }
 
 pub fn pmch(fname: &str) -> String {
@@ -34,10 +34,6 @@ pub fn pmch(fname: &str) -> String {
 
         let n_pmch = num_at_bonds * num_gc_bonds;
         println!("{n_pmch}")
-        
-
-
-       
     }
     "".to_string()
 }

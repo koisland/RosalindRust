@@ -36,14 +36,20 @@ mod lib;
 // mod rsld_longest_subs;
 // use crate::rsld_longest_subs::longest_subseq;
 
-mod rsld_dst_mat;
-use crate::rsld_dst_mat::distance_matrix;
+// mod rsld_dst_mat;
+// use crate::rsld_dst_mat::distance_matrix;
 
-mod rsld_pmch;
-use crate::rsld_pmch::pmch;
+// mod rsld_pmch;
+// use crate::rsld_pmch::pmch;
 
-mod rsld_inod;
-use crate::rsld_inod::inner_nodes;
+// mod rsld_inod;
+// use crate::rsld_inod::inner_nodes;
+
+// mod rsld_sset;
+// use crate::rsld_sset::count_subsets;
+
+mod rsld_set_theory;
+use crate::rsld_set_theory::set_theory;
 
 // // TODO:?
 // mod rsld_err_corr;
@@ -76,6 +82,7 @@ fn main() {
     // TODO
     // let res = error_correction(&rs_fname[..]);
 
-    let res = inner_nodes(&rs_fname);
+    // let res = inner_nodes(&rs_fname);
+    let res = set_theory(&rs_fname);
     println!("{:?}", res);
 }
