@@ -48,8 +48,11 @@ mod lib;
 // mod rsld_sset;
 // use crate::rsld_sset::count_subsets;
 
-mod rsld_set_theory;
-use crate::rsld_set_theory::set_theory;
+// mod rsld_set_theory;
+// use crate::rsld_set_theory::set_theory;
+
+mod rsld_trie;
+use crate::rsld_trie::build_trie;
 
 // // TODO:?
 // mod rsld_err_corr;
@@ -83,6 +86,8 @@ fn main() {
     // let res = error_correction(&rs_fname[..]);
 
     // let res = inner_nodes(&rs_fname);
-    let res = set_theory(&rs_fname);
-    println!("{:?}", res);
+    // let res = set_theory(&rs_fname);
+    // println!("{:?}", res);
+
+    build_trie(&rs_fname);
 }
